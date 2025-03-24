@@ -11,6 +11,11 @@ class SplashViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(Assets.logo),
+        Text(
+          'Reading is for Everyone',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 16),
+        ),
       ],
     );
   }
