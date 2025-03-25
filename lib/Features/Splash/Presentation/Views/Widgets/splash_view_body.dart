@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bookly/Utils/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -10,11 +11,18 @@ class SplashViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(Assets.logo),
-        Text(
-          'Reading is for Everyone',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16),
+        FadeInDown(
+          duration: Duration(milliseconds: 1500),
+          child: Image.asset(Assets.logo),
+        ),
+        FadeInUp(
+          duration: Duration(milliseconds: 1500),
+          from: 100,
+          child: Text(
+            'Reading is for Everyone',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
+          ),
         ),
       ],
     );
