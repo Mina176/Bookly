@@ -4,6 +4,7 @@ import 'package:bookly/Utils/styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
+import '../../../../Home/presentation/views/widgets/rating.dart';
 
 class DetailsViewBody extends StatelessWidget {
   const DetailsViewBody({super.key});
@@ -18,10 +19,12 @@ class DetailsViewBody extends StatelessWidget {
           'The Jungle Book',
           style: Styles.textStyle30,
         ),
-        Text(
-          'Rudyard Kipling',
-          style: Styles.textStyle18.copyWith(color: kAuthorfontColor),
-        )
+        Opacity(
+          opacity: .7,
+          child: Text('Rudyard Kipling', style: Styles.textStyle18),
+        ),
+        SizedBox(height: 18),
+        Rating(),
       ],
     );
   }

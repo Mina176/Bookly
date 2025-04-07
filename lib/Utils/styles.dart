@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 abstract class Styles {
   static const textStyle14 = TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w500, // Medium
-      fontFamily: 'Montserrat',
-      color: Color(0xFFB8B6BD));
+    fontSize: 14,
+    fontWeight: FontWeight.w500, // Medium
+    fontFamily: 'Montserrat',
+  );
   static const textStyleRating14 = TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w400, // regular
-      fontFamily: 'Montserrat',
-      color: Color(0xFF888590));
+    fontSize: 14,
+    fontWeight: FontWeight.w400, // regular
+    fontFamily: 'Montserrat',
+  );
   static const textStyle15 = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w700, // Bold
