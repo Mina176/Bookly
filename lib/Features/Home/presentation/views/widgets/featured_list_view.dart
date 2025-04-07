@@ -1,10 +1,8 @@
 import 'package:bookly/Features/Home/presentation/views/widgets/featured_list_view_item.dart';
-import 'package:bookly/Utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class FeaturedListView extends StatelessWidget {
         height: MediaQuery.of(context).size.height * .3,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 100,
+          itemCount: 10,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(right: 12.0),
