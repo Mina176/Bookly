@@ -1,6 +1,4 @@
-import 'package:bookly/Features/Home/presentation/views/widgets/book_image.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../constants.dart';
 
 class CustomBookDetailsAppBar extends StatelessWidget {
@@ -10,7 +8,8 @@ class CustomBookDetailsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal: kHorizontalPadding, vertical: 10),
+        horizontal: kHorizontalPadding,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -29,5 +28,3 @@ class CustomBookDetailsAppBar extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,10 +1,10 @@
 import 'package:bookly/Features/Home/presentation/views/widgets/book_image.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/rating.dart';
-import 'package:bookly/Utils/styles.dart';
+import 'package:bookly/Core/Utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../Utils/app_router.dart';
+import '../../../../../Core/Utils/app_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
