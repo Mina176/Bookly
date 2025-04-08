@@ -5,7 +5,6 @@ import 'package:bookly/Core/Utils/styles.dart';
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../../Core/Utils/app_router.dart';
 
 class HomeViewBody extends StatelessWidget {
