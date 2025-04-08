@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 
 class CustomBookDetailsAppBar extends StatelessWidget {
-  const CustomBookDetailsAppBar({super.key});
-
+  const CustomBookDetailsAppBar({
+    super.key,
+    required this.closeIconOnPressed,
+  });
+  final VoidCallback closeIconOnPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +17,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: closeIconOnPressed,
             icon: const Icon(Icons.close),
             iconSize: 32,
           ),
