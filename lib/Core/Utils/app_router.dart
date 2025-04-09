@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 const String kHomeView = '/homeView';
 const String kDetailsView = '/detailsView';
-const String kSearchView = '/searchView'; 
+const String kSearchView = '/searchView';
 final appRouter = GoRouter(
   routes: [
     GoRoute(
