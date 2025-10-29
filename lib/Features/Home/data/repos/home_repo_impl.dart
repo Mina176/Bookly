@@ -5,7 +5,7 @@ import 'package:bookly/Features/Home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class HomeRepoImpl extends HomeRepo {
+class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
 
   HomeRepoImpl(this.apiService);
@@ -30,8 +30,21 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+  Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      var data = await apiService.get(
+          endpoint: 'volumes?q=subject:programming&filtering=free-ebooks');
+      List<BookModel> books = [];
+
+      for (var book in data['items']) {
+        books.add(BookModel.fromJson(book));
+      }
+      return Right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      }
+    }
+    return Left(ServerFailure('An unexpected error occurred'));
   }
 }
