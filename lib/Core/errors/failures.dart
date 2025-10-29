@@ -1,11 +1,13 @@
 import 'package:dio/dio.dart';
 
-abstract class Failures {}
+abstract class Failure {
+  final String errMessage;
 
-class ServerFailure extends Failures {
-  final String message;
+  const Failure(this.errMessage);
+}
 
-  ServerFailure(this.message);
+class ServerFailure extends Failure {
+  ServerFailure(super.errMessage);
 
   factory ServerFailure.fromDioException(DioException dioError) {
     switch (dioError.type) {
@@ -35,7 +37,7 @@ class ServerFailure extends Failures {
         if (dioError.message!.contains('SocketException')) {
           return ServerFailure('No internet connection');
         }
-         return ServerFailure('An unexpected error occurred');
+        return ServerFailure('An unexpected error occurred');
     }
   }
 
