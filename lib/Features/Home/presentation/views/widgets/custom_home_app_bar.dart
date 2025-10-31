@@ -2,8 +2,8 @@ import 'package:bookly/Core/Utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomHomeAppBar extends StatelessWidget {
-  const CustomHomeAppBar({super.key, required this.onPressed});
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({super.key, required this.onPressed});
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
