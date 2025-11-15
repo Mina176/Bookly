@@ -1,4 +1,3 @@
-import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'book_image.dart';
 

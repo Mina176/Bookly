@@ -55,6 +55,7 @@ class VerticalListViewItem extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
+                    Spacer(),
                     Row(
                       children: [
                         Text(

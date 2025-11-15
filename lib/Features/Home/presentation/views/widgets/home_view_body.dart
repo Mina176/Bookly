@@ -4,7 +4,7 @@ import 'package:bookly/Features/Home/presentation/views/widgets/featured_list_vi
 import 'package:bookly/Core/Utils/styles.dart';
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart' ;
+import 'package:go_router/go_router.dart';
 import '../../../../../Core/Utils/app_router.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -13,6 +13,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(

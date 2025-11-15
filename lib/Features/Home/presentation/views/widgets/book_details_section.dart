@@ -1,19 +1,18 @@
-import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../Core/Utils/styles.dart';
 import 'book_action.dart';
 import 'book_details_image.dart';
 import 'rating.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key,});
+  const BookDetailsSection({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        BookDetailsImage(
-        ),
+        BookDetailsImage(),
         SizedBox(height: 43),
         Text(
           'The Jungle Book',
