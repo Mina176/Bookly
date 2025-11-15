@@ -1,8 +1,12 @@
+import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'book_image.dart';
 
 class BookDetailsImage extends StatelessWidget {
-  const BookDetailsImage({super.key});
+  const BookDetailsImage({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -10,7 +14,9 @@ class BookDetailsImage extends StatelessWidget {
       padding: EdgeInsets.symmetric(
         horizontal: width * 0.3,
       ),
-      child: BookImage(),
+      child: CustomBookImage(
+        imageUrl: 'https://covers.openlibrary.org/b/id/8226191-L.jpg',
+      ),
     );
   }
 }

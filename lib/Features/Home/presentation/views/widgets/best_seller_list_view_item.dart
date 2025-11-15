@@ -1,3 +1,4 @@
+import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/book_image.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/rating.dart';
 import 'package:bookly/Core/Utils/styles.dart';
@@ -7,7 +8,11 @@ import 'package:go_router/go_router.dart';
 import '../../../../../Core/Utils/app_router.dart';
 
 class VerticalListViewItem extends StatelessWidget {
-  const VerticalListViewItem({super.key});
+  const VerticalListViewItem({
+    super.key,
+    required this.book,
+  });
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,7 @@ class VerticalListViewItem extends StatelessWidget {
           height: 130,
           child: Row(
             children: [
-              BookImage(),
+              CustomBookImage(imageUrl: book.volumeInfo.imageLinks!.thumbnail),
               SizedBox(width: 30),
               Expanded(
                 child: Column(
@@ -33,7 +38,7 @@ class VerticalListViewItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
                       child: Text(
-                        'Harry Potter and the Goblet of Fire',
+                        book.volumeInfo.title!,
                         style: Styles.textStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -43,7 +48,8 @@ class VerticalListViewItem extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      'J.K. Rowling',
+                      book.volumeInfo.authors?[0] ?? 'Unknown',
+                      maxLines: 1,
                       style: Styles.textStyle14,
                     ),
                     SizedBox(
@@ -52,11 +58,14 @@ class VerticalListViewItem extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          '19.99 €',
+                          'Free',
                           style: Styles.textStyle15,
                         ),
                         Spacer(),
-                        Rating()
+                        BookRating(
+                          rating: book.volumeInfo.averageRating ?? 0,
+                          count: book.volumeInfo.ratingsCount ?? 0,
+                        )
                       ],
                     ),
                   ],

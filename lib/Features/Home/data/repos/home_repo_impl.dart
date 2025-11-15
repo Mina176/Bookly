@@ -15,7 +15,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       // FIX 2: Changed query to be less restrictive
       var data = await apiService.get(
-          endpoint: 'volumes?q=programming&orderBy=newest');
+          endpoint: 'volumes?q=programming&filter=free-ebooks&orderBy=newest');
 
       List<BookModel> books = [];
 
@@ -37,7 +37,8 @@ class HomeRepoImpl implements HomeRepo {
     try {
       // FIX 1: Removed 'filter=free-ebooks' and added 'orderBy=relevance'
       var data = await apiService.get(
-          endpoint: 'volumes?q=programming&orderBy=relevance');
+          endpoint:
+              'volumes?q=programming&filter=free-ebooks&orderBy=relevance');
 
       List<BookModel> books = [];
 
