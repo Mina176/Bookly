@@ -1,3 +1,4 @@
+import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -7,8 +8,9 @@ import 'similar_books_Section.dart';
 class DetailsViewBody extends StatelessWidget {
   const DetailsViewBody({
     super.key,
+    required this.book,
   });
-
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,10 +19,12 @@ class DetailsViewBody extends StatelessWidget {
           closeIconOnPressed: () => GoRouter.of(context).pop(),
         ),
         SizedBox(height: 36),
-        BookDetailsSection(),
-        Expanded(child: SizedBox(height: 32)),
+        BookDetailsSection(
+          book: book,
+        ),
+        Spacer(),
         SimilarBooksSection(),
-        SizedBox(height: 40),
+        SizedBox(height: 24),
       ],
     );
   }

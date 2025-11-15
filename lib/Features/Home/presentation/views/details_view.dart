@@ -22,7 +22,10 @@ class _DetailsViewState extends State<DetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: DetailsViewBody()),
+      body: SafeArea(
+          child: DetailsViewBody(
+        book: widget.book,
+      )),
     );
   }
 }

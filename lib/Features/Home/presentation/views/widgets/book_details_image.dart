@@ -4,8 +4,9 @@ import 'book_image.dart';
 class BookDetailsImage extends StatelessWidget {
   const BookDetailsImage({
     super.key,
+    required this.imageUrl,
   });
-
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -14,7 +15,7 @@ class BookDetailsImage extends StatelessWidget {
         horizontal: width * 0.3,
       ),
       child: CustomBookImage(
-        imageUrl: 'https://covers.openlibrary.org/b/id/8226191-L.jpg',
+        imageUrl: imageUrl,
       ),
     );
   }
