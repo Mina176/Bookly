@@ -20,7 +20,7 @@ class VerticalListViewItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(kDetailsView);
+          GoRouter.of(context).push(kDetailsView, extra: book);
         },
         child: SizedBox(
           height: 130,
