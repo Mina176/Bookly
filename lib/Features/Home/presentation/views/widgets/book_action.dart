@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../Core/widgets/custom_button.dart';
 
 class BookAction extends StatelessWidget {
-  const BookAction({super.key});
-
+  const BookAction({super.key, required this.onPressed});
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -15,7 +15,7 @@ class BookAction extends StatelessWidget {
           Expanded(
             child: CustomButton(
               onPressed: () {},
-              text: '19.99€',
+              text: 'Free',
               backgroundColor: Colors.white,
               buttonTextStyle: Styles.textStyle15.copyWith(
                 color: Colors.black,
@@ -29,7 +29,7 @@ class BookAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
-              onPressed: () {},
+              onPressed: onPressed,
               text: 'Free Preview',
               backgroundColor: const Color(0xFFEF8262),
               buttonTextStyle: Styles.textStyle16.copyWith(

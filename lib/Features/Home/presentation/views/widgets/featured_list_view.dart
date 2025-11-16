@@ -24,16 +24,11 @@ class FeaturedBooksListView extends StatelessWidget {
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    GoRouter.of(context)
-                        .push(kDetailsView, extra: state.books[index]);
-                  },
-                  child: CustomBookImage(
-                    imageUrl:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                            '',
-                  ),
+                return CustomBookImage(
+                  onTap: () => GoRouter.of(context)
+                      .push(kDetailsView, extra: state.books[index]),
+                  imageUrl:
+                      state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
                 );
               },
             ),

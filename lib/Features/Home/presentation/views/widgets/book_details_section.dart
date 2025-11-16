@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:bookly/Core/functions/url_launcher.dart';
 import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/Home/presentation/manager/similar_book_cubit/fetch_similar_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/shimmer_featured_list_view.dart';
@@ -28,6 +29,7 @@ class BookDetailsSection extends StatelessWidget {
           child: AutoSizeText(
             book.volumeInfo.title!,
             maxLines: 2,
+            textAlign: TextAlign.center,
             style: Styles.textStyle30,
           ),
         ),
@@ -44,7 +46,9 @@ class BookDetailsSection extends StatelessWidget {
           rating: book.volumeInfo.averageRating?.toDouble() ?? 0,
         ),
         SizedBox(height: 16),
-        BookAction(),
+        BookAction(
+          onPressed: () => launchURL(book.volumeInfo.previewLink!),
+        ),
       ],
     );
   }

@@ -1,7 +1,9 @@
+import 'package:bookly/Core/Utils/app_router.dart';
 import 'package:bookly/Features/Home/presentation/manager/similar_book_cubit/fetch_similar_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../../Core/Utils/assets.dart';
 
@@ -25,6 +27,9 @@ class SimilarBooksListView extends StatelessWidget {
                     imageUrl:
                         state.books[index].volumeInfo.imageLinks?.thumbnail ??
                             '',
+                    onTap: () => GoRouter.of(context).pushReplacement(
+                        kDetailsView,
+                        extra: state.books[index]),
                   ),
                 );
               },

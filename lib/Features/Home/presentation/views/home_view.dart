@@ -1,4 +1,5 @@
 import 'package:bookly/Features/Home/presentation/views/widgets/home_view_body.dart';
+import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,7 +9,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: const EdgeInsets.only(top: 50),
+      padding: const EdgeInsets.only(top: kVerticalPadding),
       child: HomeViewBody(),
     ));
   }
