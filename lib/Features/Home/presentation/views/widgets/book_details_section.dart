@@ -1,10 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bookly/Core/functions/url_launcher.dart';
-import 'package:bookly/Features/Home/data/models/book_model/book_model.dart';
-import 'package:bookly/Features/Home/presentation/manager/similar_book_cubit/fetch_similar_books_cubit.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/shimmer_featured_list_view.dart';
+import 'package:bookly/Core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../Core/Utils/styles.dart';
 import 'book_action.dart';
 import 'book_details_image.dart';
