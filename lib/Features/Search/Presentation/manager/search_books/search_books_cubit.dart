@@ -1,18 +1,20 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookly/Core/models/book_model/book_model.dart';
-import 'package:bookly/Features/Home/data/repos/home_repo.dart';
+import 'package:bookly/Features/Search/data/repo/search_repo.dart';
 import 'package:equatable/equatable.dart';
 
 part 'search_books_state.dart';
 
 class SearchBooksCubit extends Cubit<SearchBooksState> {
-  SearchBooksCubit(this.homeRepo) : super(SearchBooksInitial());
+  SearchBooksCubit(this.searchRepo) : super(SearchBooksInitial());
 
-  final HomeRepo homeRepo;
+  final SearchRepo searchRepo;
 
-  Future<void> fetchSearchedBooks() async {
+  Future<void> fetchSearchedBooks({required String query}) async {
     emit(SearchBooksLoading());
-    var result = await homeRepo.fetchFeaturedBooks();
+    var result = await searchRepo.fetchSearchedBooks(
+      query: query,
+    );
     result.fold((failure) {
       emit(SearchBooksFailure(failure.errMessage));
     }, (books) {
