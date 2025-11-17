@@ -7,8 +7,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../Core/Utils/app_router.dart';
 
-class VerticalListViewItem extends StatelessWidget {
-  const VerticalListViewItem({
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({
     super.key,
     required this.book,
   });

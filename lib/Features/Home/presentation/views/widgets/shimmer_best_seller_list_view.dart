@@ -1,4 +1,5 @@
 import 'package:bookly/Features/Home/presentation/views/widgets/shimmer_featured_list_view.dart';
+import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 class ShimmerBestSellerListView extends StatelessWidget {
@@ -6,14 +7,17 @@ class ShimmerBestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.zero,
-      itemCount: 5,
-      separatorBuilder: (context, index) => const SizedBox(height: 16),
-      itemBuilder: (context, index) {
-        return const ShimmerNewestListViewItem();
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      child: ListView.separated(
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemCount: 5,
+        separatorBuilder: (context, index) => const SizedBox(height: 16),
+        itemBuilder: (context, index) {
+          return const ShimmerNewestListViewItem();
+        },
+      ),
     );
   }
 }
@@ -24,7 +28,7 @@ class ShimmerNewestListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       child: SizedBox(
         height: 130,
         child: Row(
@@ -32,8 +36,8 @@ class ShimmerNewestListViewItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: ShimmerItem(
-                height: 130,
-                width: 85,
+                height: 145,
+                width: 89,
               ),
             ),
             SizedBox(width: 25),

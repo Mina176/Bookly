@@ -10,12 +10,12 @@ class ShimmerFeaturedListView extends StatelessWidget {
       height: MediaQuery.of(context).size.height * .3,
       child: ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(width: 12),
-        itemCount: 4,
+        itemCount: 10,
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => ShimmerItem(
           height: MediaQuery.of(context).size.height * .3,
-          width: MediaQuery.of(context).size.width * .4,
+          width: MediaQuery.of(context).size.width * .35,
         ),
       ),
     );

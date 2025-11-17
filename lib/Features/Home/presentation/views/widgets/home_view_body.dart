@@ -1,9 +1,14 @@
-import 'package:bookly/Features/Home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:bookly/Core/widgets/custom_error_widget.dart';
+import 'package:bookly/Features/Home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/newest_books_list_view.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/featured_list_view.dart';
 import 'package:bookly/Core/Utils/styles.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/shimmer_best_seller_list_view.dart';
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../Core/Utils/app_router.dart';
 
@@ -40,12 +45,9 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        SliverFillRemaining(
-          child: Padding(
+        SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-            child: BestSellerListView(),
-          ),
-        ),
+            sliver: NewestBookListView()),
       ],
     );
   }

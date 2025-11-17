@@ -1,4 +1,4 @@
-import 'package:bookly/Features/Home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:bookly/Features/Search/Presentation/manager/search_books/search_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +16,7 @@ class SearchResultListView extends StatelessWidget {
             itemCount: state.books.length,
             itemBuilder: (context, index) {
               return state.books.isNotEmpty
-                  ? VerticalListViewItem(
+                  ? NewestBooksListViewItem(
                       book: state.books[index],
                     )
                   : Center(
