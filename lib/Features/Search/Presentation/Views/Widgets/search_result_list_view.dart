@@ -13,11 +13,15 @@ class SearchResultListView extends StatelessWidget {
         if (state is SearchBooksSuccess) {
           return ListView.builder(
             padding: EdgeInsets.zero,
-            itemCount: 100,
+            itemCount: state.books.length,
             itemBuilder: (context, index) {
-              return VerticalListViewItem(
-                book: state.books[index],
-              );
+              return state.books.isNotEmpty
+                  ? VerticalListViewItem(
+                      book: state.books[index],
+                    )
+                  : Center(
+                      child: Text('No results found...'),
+                    );
             },
           );
         } else if (state is SearchBooksFailure) {
@@ -25,9 +29,7 @@ class SearchResultListView extends StatelessWidget {
             child: Text(state.errMessage),
           );
         } else {
-          return Center(
-            child: Text('Start searching for books!'),
-          );
+          return SizedBox();
         }
       },
     );

@@ -26,7 +26,8 @@ class VerticalListViewItem extends StatelessWidget {
           height: 130,
           child: Row(
             children: [
-              CustomBookImage(imageUrl: book.volumeInfo.imageLinks!.thumbnail),
+              CustomBookImage(
+                  imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
               SizedBox(width: 30),
               Expanded(
                 child: Column(
